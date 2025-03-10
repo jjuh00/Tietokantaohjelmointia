@@ -1,0 +1,383 @@
+{
+    "käyttäjät": [],
+    "kategoriat": {
+        "pizzat": {
+            "yleiset_täytteet": ["Tomaattikastike", "Mozzarellajuusto"],
+            "vaihtoehdot": [
+                {
+                    "id": "p1",
+                    "nimi": "Fantasia",
+                    "hinta": 10.00,
+                    "kuvaus": "Oma valinta pizza. Voit valita 3 ilmaista täytettä, extra täytteet maksavat 1,50 euroa per täyte",
+                    "täytteet": [],
+                    "mahd_täytteet": ["Aurajuusto", "Ananas", "Pepperooni", "Kinkku", "Kebab", 
+                    "Kana", "Katkarapu", "Tonnikala", "Pekoni", "Jalapeno", 
+                    "Jauheliha", "Punasipuli", "Majoneesi", "Tomaatti"]
+                },
+                {
+                    "id": "p2",
+                    "nimi": "Tropicana",
+                    "hinta": 9.50,
+                    "täyttet": ["Kinkku", "Ananas"]
+                },
+                {
+                    "id": "p3",
+                    "nimi": "Americano",
+                    "hinta": 9.50,
+                    "täytteet": ["Ananas", "Aurajuusto", "Kinkku"]
+                },
+                {
+                    "id": "p4",
+                    "nimi": "Hawaiji",
+                    "hinta": 9.50,
+                    "täytteet": ["Ananas", "Kana", "Aurajuusto"]
+                },
+                {
+                    "id": "p5",
+                    "nimi": "Opera",
+                    "hinta": 9.50,
+                    "täytteet": ["Kinkku", "Pepperoni", "Tonnikala"]
+                },
+                {
+                    "id": "p6",
+                    "nimi": "Kebab",
+                    "hinta": 9.50,
+                    "täytteet": ["Kebab", "Punasipuli", "Majoneesi"]
+                },
+                {
+                    "id": "p7",
+                    "nimi": "Jauheliha",
+                    "hinta": 9.50,
+                    "täytteet": ["Jauheliha", "Sipuli"]
+                },
+                {
+                    "id": "p8",
+                    "nimi": "Kana",
+                    "hinta": 9.50,
+                    "täytteet": ["Kana", "Tomaatti"]
+                },
+                {
+                    "id": "p9",
+                    "nimi": "Tonnikala",
+                    "hinta": 9.50,
+                    "täytteet": ["Tonnikala", "Punasipuli", "Tomaatti"]
+                }
+            ]
+        },
+        "kebabit": {
+            "yleiset_täytteet": ["Salaatti", "Kurkku", "Tomaatti", "Majoneesi"],
+            "vaihtoehdot": [
+                {
+                    "id": "ke1",
+                    "nimi": "Kebab ranskalaisilla",
+                    "hinta": 9.00,
+                    "täytteet": ["Kebab", "Ranskalaiset"]
+                },
+                {
+                    "id": "ke2",
+                    "nimi": "Kebab lohkoperunoilla",
+                    "hinta": 9.00,
+                    "täytteet": ["Kebab", "Lohkoperunat"]
+                },
+                {
+                    "id": "ke3",
+                    "nimi": "Kebab riisillä",
+                    "hinta": 9.00,
+                    "täytteet": ["Kebab", "Riisi"]
+                },
+                {
+                    "id": "ke4",
+                    "nimi": "Kanabeb ranskalaisilla",
+                    "hinta": 9.00,
+                    "täytteet": ["Kanakebab", "Ranskalaiset"]
+                },
+                {
+                    "id": "ke5",
+                    "nimi": "Kanakebab lohkoperunoilla",
+                    "hinta": 9.00,
+                    "täytteet": ["Kanakebab", "Lohkoperunat"]
+                },
+                {
+                    "id": "ke6",
+                    "nimi": "Kanakebab riisillä",
+                    "hinta": 9.00,
+                    "täytteet": ["Kanakebab", "Riisi"]
+                },
+                {
+                    "id": "ke7",
+                    "nimi": "Kasviskebab ranskalaisilla",
+                    "hinta": 9.00,
+                    "täytteet": ["Kasviskebab", "Ranskalaiset"]
+                },
+                {
+                    "id": "ke8",
+                    "nimi": "Kasviskebab lohkoperunoilla",
+                    "hinta": 9.00,
+                    "täytteet": ["Kasviskebab", "Lohkoperunat"]
+                },
+                {
+                    "id": "ke9",
+                    "nimi": "Kasviskebab riisillä",
+                    "hinta": 9.00,
+                    "täytteet": ["Kasviskebab", "Riisi"]
+                },
+                {
+                    "id": "ke10",
+                    "nimi": "Kebabrulla",
+                    "hinta": 8.00,
+                    "täytteet": ["Kebab", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
+                },
+                {
+                    "id": "ke11",
+                    "nimi": "Kanakebabrulla",
+                    "hinta": 8.00,
+                    "täytteet": ["Kanakebab", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
+                },
+                {
+                    "id": "ke12",
+                    "nimi": "Kasviskebabrulla",
+                    "hinta": 8.00,
+                    "täytteet": ["Kasviskebab", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
+                }
+            ]
+        },
+        "kanat": {
+            "yleiset_täytteet": ["Salaatti", "Kurkku", "Tomaatti", "Majoneesi"],
+            "vaihtoehdot": [
+                {
+                    "id": "ka1",
+                    "nimi": "Kanakori",
+                    "hinta": 9.00,
+                    "täytteet": ["Kana", "Ranskalaiset"]
+                },
+                {
+                    "id": "ka2",
+                    "nimi": "Kana lohkoperunoilla",
+                    "hinta": 9.00,
+                    "täytteet": ["Kana", "Lohkoperunat"]
+                },
+                {
+                    "id": "ka3",
+                    "nimi": "Kana riisillä",
+                    "hinta": 9.00,
+                    "täytteet": ["Kana", "Riisi"]
+                },
+                {
+                    "id": "ka4",
+                    "nimi": "Kanarulla",
+                    "hinta": 8.00,
+                    "täytteet": ["Kana", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
+                }
+            ]
+        },
+        "salaatit": {
+            "yleiset_täytteet": ["Jäävuorisalaatti", "Kurkku", "Punasipuli", "Tomaatti", "Ananas"],
+            "vaihtoehdot": [
+                {
+                    "id": "s1",
+                    "nimi": "Kanasalaatti",
+                    "hinta": 7.50,
+                    "täytteet": ["Kana"]
+                },
+                {
+                    "id": "s2",
+                    "nimi": "Kebabsalaatti",
+                    "hinta": 7.50,
+                    "täytteet": ["Kebab"]
+                },
+                {
+                    "id": "s3",
+                    "nimi": "Kanakebabsalaatit",
+                    "hinta": 7.50,
+                    "täytteet": ["Kanakebab"]
+                },
+                {
+                    "id": "s4",
+                    "nimi": "Kasviskebabsalaatti",
+                    "hinta": 7.50,
+                    "täytteet": ["Kasviskebab"]
+                },
+                {
+                    "id": "s5",
+                    "nimi": "Tonniakalasalaatit",
+                    "hinta": 7.50,
+                    "täytteet": ["Tonnikala"]
+                }
+            ]
+        },
+        "burgerit": {
+            "yleiset_täytteet": [],
+            "sämpylät": ["Vehnäsämpylä", "Perunasämpylä"],
+            "vaihtoehdot": [
+                {
+                    "id": "b1",
+                    "nimi": "Kerroshampurilainen",
+                    "hinta": 9.00,
+                    "täytteet": ["2x naudanjauhelihapihviä", "Juusto", "Punasipuli", "Maustekurkku", "Majoneesi"]
+                },
+                {
+                    "id": "b2",
+                    "nimi": "Juustohampurilainen",
+                    "hinta": 6.00,
+                    "täytteet": ["Naudanjauhelihapihvi", "Juusto", "Ketsuppi", "Salaatti", "Maustekurkku"]
+                },
+                {
+                    "id": "b3",
+                    "nimi": "Kanahampurilainen",
+                    "hinta": 8.00,
+                    "täytteet": ["Rapea kanapihvi", "Salaatti", "Tomaatti", "Sipuli"]
+                },
+                {
+                    "id": "b4",
+                    "nimi": "Megakerroshampurilainen",
+                    "hinta": 13.00,
+                    "täytteet": ["3x naudanjauhelihapihviä", "Juusto", "Punasipuli", "Maustekurkku", "Jalapeno", "Majoneesi"]
+                },
+                {
+                    "id": "b5",
+                    "nimi": "Tuplajuustohampurilainen",
+                    "hinta": 8.50,
+                    "täytteet": ["2x naudanjauhelihapihviä", "Juusto", "Ketsuppi", "Salaatti", "Maustekurkku", "Punasipuli"]
+                }
+            ]
+        },
+        "juomat": {
+            "yleiset_täytteet": [],
+            "vaihtoehdot": [
+                {
+                    "id": "j1",
+                    "nimi": "Kuplavesi",
+                    "hinta": 2.00,
+                    "tilavuus": 0.50
+                },
+                {
+                    "id": "j2",
+                    "nimi": "Pepsi",
+                    "hinta": 2.00,
+                    "tilavuus": 0.33
+                },
+                {
+                    "id": "j3",
+                    "nimi": "Pepsi",
+                    "hinta": 4.00,
+                    "tilavuus": 1.50
+                },
+                {
+                    "id": "j4",
+                    "nimi": "Pepsi Max",
+                    "hinta": 2.00,
+                    "tilavuus": 0.33
+                },
+                {
+                    "id": "j5",
+                    "nimi": "Pepsi Max",
+                    "hinta": 4.00,
+                    "tilavuus": 1.50
+                },
+                {
+                    "id": "j6",
+                    "nimi": "Coca-Cola",
+                    "hinta": 2.00,
+                    "tilavuus": 0.33
+                },
+                {
+                    "id": "j7",
+                    "nimi": "Coca-Cola ",
+                    "hinta": 4.00,
+                    "tilavuus": 1.50
+                },
+                {
+                    "id": "j8",
+                    "nimi": "Coca-Cola Zero",
+                    "hinta": 2.00,
+                    "tilavuus": 0.33
+                },
+                {
+                    "id": "j9",
+                    "nimi": "Coca-Cola Zero",
+                    "hinta": 4.00,
+                    "tilavuus": 1.50
+                },
+                {
+                    "id": "j10",
+                    "nimi": "Jaffa",
+                    "hinta": 2.50,
+                    "tilavuus": 0.50
+                },
+                {
+                    "id": "j11",
+                    "nimi": "Jaffa sokeriton",
+                    "hinta": 2.50,
+                    "tilavuus": 0.50
+                },
+                {
+                    "id": "j12",
+                    "nimi": "Sprite",
+                    "hinta": 2.00,
+                    "tilavuus": 0.33
+                },
+                {
+                    "id": "j13",
+                    "nimi": "Sprite Zero",
+                    "hinta": 2.00,
+                    "tilavuus": 0.33
+                },
+                {
+                    "id": "j14",
+                    "nimi": "7up Sokeriton",
+                    "hinta": 2.50,
+                    "tilavuus": 0.50
+                },
+                {
+                    "id": "j15",
+                    "nimi": "Appelsiinipillimehu",
+                    "hinta": 1.00,
+                    "tilavuus": 0.20
+                },
+                {
+                    "id": "j16",
+                    "nimi": "Vadelmapillimehu",
+                    "hinta": 1.00,
+                    "tilavuus": 0.20
+                },
+                {
+                    "id": "j17",
+                    "nimi": "Mansikkapillimehu",
+                    "hinta": 1.00,
+                    "tilavuus": 0.20
+                },
+                {
+                    "id": "j18",
+                    "nimi": "Omenapillimehu",
+                    "hinta": 1.00,
+                    "tilavuus": 0.20
+                },
+                {
+                    "id": "j19",
+                    "nimi": "Cola-appelsiinipillimehu",
+                    "hinta": 1.00,
+                    "tilavuus": 0.20
+                }
+            ]
+        }
+    },
+    "majoneesit": [
+        {
+            "id": "m1",
+            "nimi": "Talonkastike"
+        },
+        {
+            "id": "m2",
+            "nimi": "Valkosipuli"
+        },
+        {
+            "id": "m3",
+            "nimi": "Curry"
+        },
+        {
+            "id": "m4",
+            "nimi": "BBQ"
+        }
+    ],
+    "tilaukset": []
+}
