@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Junalippujärjestelmä;
+namespace Lentolippujärjestelmä;
 
 public class Program
 {

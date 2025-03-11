@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Junalippujärjestelmä;
+namespace Lentolippujärjestelmä;
 
 public static class MauiProgram
 {

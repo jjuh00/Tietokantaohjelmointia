@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace Junalippujärjestelmä;
+namespace Lentolippujärjestelmä;
 
 [Application]
 public class MainApplication : MauiApplication

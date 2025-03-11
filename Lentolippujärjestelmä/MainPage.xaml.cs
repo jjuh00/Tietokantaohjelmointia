@@ -1,4 +1,4 @@
-﻿namespace Junalippujärjestelmä
+﻿namespace Lentolippujärjestelmä
 {
     public partial class MainPage : ContentPage
     {

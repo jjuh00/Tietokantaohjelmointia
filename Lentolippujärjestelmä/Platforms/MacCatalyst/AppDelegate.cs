@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Junalippujärjestelmä;
+namespace Lentolippujärjestelmä;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
