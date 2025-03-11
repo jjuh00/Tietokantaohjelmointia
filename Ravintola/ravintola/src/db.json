@@ -1,411 +1,586 @@
 {
-    "users": [
-        {   
-            "id": 1,
-            "email": "ZXNpbWVya2tpQHRlc3RpLmNvbQ==",
-            "password": "c2FsYXNhbmExMjM0",
-            "balance": 50.00
-        }
-    ],
-    "categories": {
-        "pizzas": {
-            "common_ingredients": ["Tomaattikastike", "Mozzarellajuusto"],
-            "items": [
-                {
-                    "id": "p1",
-                    "name": "Fantasia",
-                    "price": 10.00,
-                    "description": "Oma valinta pizza. Voit valita 3 ilmaista täytettä, extra täytteet maksavat 1,50 euroa per täyte",
-                    "ingredients": [],
-                    "possible_ingredients": ["Aurajuusto", "Ananas", "Pepperooni", "Kinkku", "Kebab", 
-                    "Kana", "Katkarapu", "Tonnikala", "Pekoni", "Jalapeno", 
-                    "Jauheliha", "Punasipuli", "Majoneesi", "Tomaatti"]
-                },
-                {
-                    "id": "p2",
-                    "name": "Tropicana",
-                    "price": 9.50,
-                    "ingredients": ["Kinkku", "Ananas"]
-                },
-                {
-                    "id": "p3",
-                    "name": "Americano",
-                    "price": 9.50,
-                    "ingredients": ["Ananas", "Aurajuusto", "Kinkku"]
-                },
-                {
-                    "id": "p4",
-                    "name": "Hawaiji",
-                    "price": 9.50,
-                    "ingredients": ["Ananas", "Kana", "Aurajuusto"]
-                },
-                {
-                    "id": "p5",
-                    "name": "Opera",
-                    "price": 9.50,
-                    "ingredients": ["Kinkku", "Pepperoni", "Tonnikala"]
-                },
-                {
-                    "id": "p6",
-                    "name": "Kebab",
-                    "price": 9.50,
-                    "ingredients": ["Kebab", "Punasipuli", "Majoneesi"]
-                },
-                {
-                    "id": "p7",
-                    "name": "Jauheliha",
-                    "price": 9.50,
-                    "ingredients": ["Jauheliha", "Sipuli"]
-                },
-                {
-                    "id": "p8",
-                    "name": "Kana",
-                    "price": 9.50,
-                    "ingredients": ["Kana", "Tomaatti"]
-                },
-                {
-                    "id": "p9",
-                    "name": "Tonnikala",
-                    "price": 9.50,
-                    "ingredients": ["Tonnikala", "Punasipuli", "Tomaatti"]
-                }
-            ]
-        },
-        "kebabs": {
-            "common_ingredients": ["Salaatti", "Kurkku", "Tomaatti", "Majoneesi"],
-            "items": [
-                {
-                    "id": "k1",
-                    "name": "Kebab ranskalaisilla",
-                    "price": 9.00,
-                    "ingredients": ["Kebab", "Ranskalaiset"]
-                },
-                {
-                    "id": "k2",
-                    "name": "Kebab lohkoperunoilla",
-                    "price": 9.00,
-                    "ingredients": ["Kebab", "Lohkoperunat"]
-                },
-                {
-                    "id": "k3",
-                    "name": "Kebab riisillä",
-                    "price": 9.00,
-                    "ingredients": ["Kebab", "Riisi"]
-                },
-                {
-                    "id": "k4",
-                    "name": "Kanabeb ranskalaisilla",
-                    "price": 9.00,
-                    "ingredients": ["Kanakebab", "Ranskalaiset"]
-                },
-                {
-                    "id": "k5",
-                    "name": "Kanakebab lohkoperunoilla",
-                    "price": 9.00,
-                    "ingredients": ["Kanakebab", "Lohkoperunat"]
-                },
-                {
-                    "id": "k6",
-                    "name": "Kanakebab riisillä",
-                    "price": 9.00,
-                    "ingredients": ["Kanakebab", "Riisi"]
-                },
-                {
-                    "id": "k7",
-                    "name": "Kasviskebab ranskalaisilla",
-                    "price": 9.00,
-                    "ingredients": ["Kasviskebab", "Ranskalaiset"]
-                },
-                {
-                    "id": "k8",
-                    "name": "Kasviskebab lohkoperunoilla",
-                    "price": 9.00,
-                    "ingredients": ["Kasviskebab", "Lohkoperunat"]
-                },
-                {
-                    "id": "k9",
-                    "name": "Kasviskebab riisillä",
-                    "price": 9.00,
-                    "ingredients": ["Kasviskebab", "Riisi"]
-                },
-                {
-                    "id": "k10",
-                    "name": "Kebabrulla",
-                    "price": 8.00,
-                    "ingredients": ["Kebab", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
-                },
-                {
-                    "id": "k11",
-                    "name": "Kanakebabrulla",
-                    "price": 8.00,
-                    "ingredients": ["Kanakebab", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
-                },
-                {
-                    "id": "k12",
-                    "name": "Kasviskebabrulla",
-                    "price": 8.00,
-                    "ingredients": ["Kasviskebab", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
-                }
-            ]
-        },
-        "chickens": {
-            "common_ingredients": ["Salaatti", "Kurkku", "Tomaatti", "Majoneesi"],
-            "items": [
-                {
-                    "id": "c1",
-                    "name": "Kanakori",
-                    "price": 9.00,
-                    "ingredients": ["Kana", "Ranskalaiset"]
-                },
-                {
-                    "id": "c2",
-                    "name": "Kana lohkoperunoilla",
-                    "price": 9.00,
-                    "ingredients": ["Kana", "Lohkoperunat"]
-                },
-                {
-                    "id": "c3",
-                    "name": "Kana riisillä",
-                    "price": 9.00,
-                    "ingredients": ["Kana", "Riisi"]
-                },
-                {
-                    "id": "c4",
-                    "name": "Kanarulla",
-                    "price": 8.00,
-                    "ingredients": ["Kana", "Cheddarjuusto", "Punasipuli", "Salaatti", "Majoneesi"]
-                }
-            ]
-        },
-        "salads": {
-            "common_ingredients": ["Jäävuorisalaatti", "Kurkku", "Punasipuli", "Tomaatti", "Ananas"],
-            "items": [
-                {
-                    "id": "s1",
-                    "name": "Kanasalaatti",
-                    "price": 7.50,
-                    "ingredients": ["Kana"]
-                },
-                {
-                    "id": "s2",
-                    "name": "Kebabsalaatti",
-                    "price": 7.50,
-                    "ingredients": ["Kebab"]
-                },
-                {
-                    "id": "s3",
-                    "name": "Kanakebabsalaatit",
-                    "price": 7.50,
-                    "ingredients": ["Kanakebab"]
-                },
-                {
-                    "id": "s4",
-                    "name": "Kasviskebabsalaatti",
-                    "price": 7.50,
-                    "ingredients": ["Kasviskebab"]
-                },
-                {
-                    "id": "s5",
-                    "name": "Tonniakalasalaatit",
-                    "price": 7.50,
-                    "ingredients": ["Tonnikala"]
-                }
-            ]
-        },
-        "burgers": {
-            "common_ingredients": [],
-            "buns": ["Vehnäsämpylä", "Perunasämpylä"],
-            "items": [
-                {
-                    "id": "b1",
-                    "name": "Kerroshampurilainen",
-                    "price": 9.00,
-                    "ingredients": ["2x naudanjauhelihapihviä", "Juusto", "Punasipuli", "Maustekurkku", "Majoneesi"]
-                },
-                {
-                    "id": "b2",
-                    "name": "Juustohampurilainen",
-                    "price": 6.00,
-                    "ingredients": ["Naudanjauhelihapihvi", "Juusto", "Ketsuppi", "Salaatti", "Maustekurkku"]
-                },
-                {
-                    "id": "b3",
-                    "name": "Kanahampurilainen",
-                    "price": 8.00,
-                    "ingredients": ["Rapea kanapihvi", "Salaatti", "Tomaatti", "Sipuli"]
-                },
-                {
-                    "id": "b4",
-                    "name": "Megakerroshampurilainen",
-                    "price": 13.00,
-                    "ingredients": ["3x naudanjauhelihapihviä", "Juusto", "Punasipuli", "Maustekurkku", "Jalapeno", "Majoneesi"]
-                },
-                {
-                    "id": "b5",
-                    "name": "Tuplajuustohampurilainen",
-                    "price": 8.50,
-                    "ingredients": ["2x naudanjauhelihapihviä", "Juusto", "Ketsuppi", "Salaatti", "Maustekurkku", "Punasipuli"]
-                }
-            ]
-        },
-        "drinks": {
-            "common_ingredients": [],
-            "items": [
-                {
-                    "id": "d1",
-                    "name": "Kuplavesi",
-                    "price": 2.00,
-                    "volume": 0.50
-                },
-                {
-                    "id": "d2",
-                    "name": "Pepsi",
-                    "price": 2.00,
-                    "volume": 0.33
-                },
-                {
-                    "id": "d3",
-                    "name": "Pepsi",
-                    "price": 4.00,
-                    "voulme": 1.50
-                },
-                {
-                    "id": "d4",
-                    "name": "Pepsi Max",
-                    "price": 2.00,
-                    "volume": 0.33
-                },
-                {
-                    "id": "d5",
-                    "name": "Pepsi Max",
-                    "price": 4.00,
-                    "volume": 1.50
-                },
-                {
-                    "id": "d6",
-                    "name": "Coca-Cola",
-                    "price": 2.00,
-                    "volume": 0.33
-                },
-                {
-                    "id": "d7",
-                    "name": "Coca-Cola",
-                    "price": 4.00,
-                    "volume": 1.50
-                },
-                {
-                    "id": "d8",
-                    "name": "Coca-Cola Zero",
-                    "price": 2.00,
-                    "volume": 0.33
-                },
-                {
-                    "id": "d9",
-                    "name": "Coca-Cola Zero",
-                    "price": 4.00,
-                    "volume": 1.50
-                },
-                {
-                    "id": "d10",
-                    "name": "Jaffa",
-                    "price": 2.50,
-                    "volume": 0.50
-                },
-                {
-                    "id": "d11",
-                    "name": "Jaffa sokeriton",
-                    "price": 2.50,
-                    "volume": 0.50
-                },
-                {
-                    "id": "d12",
-                    "name": "Sprite",
-                    "price": 2.00,
-                    "volume": 0.33
-                },
-                {
-                    "id": "d13",
-                    "name": "Sprite Zero",
-                    "price": 2.00,
-                    "volume": 0.33
-                },
-                {
-                    "id": "d14",
-                    "name": "7up Sokeriton",
-                    "price": 2.50,
-                    "volume": 0.50
-                },
-                {
-                    "id": "d15",
-                    "name": "Appelsiinipillimehu",
-                    "price": 1.00,
-                    "volume": 0.20
-                },
-                {
-                    "id": "d16",
-                    "name": "Vadelmapillimehu",
-                    "price": 1.00,
-                    "volume": 0.20
-                },
-                {
-                    "id": "d17",
-                    "name": "Mansikkapillimehu",
-                    "price": 1.00,
-                    "volume": 0.20
-                },
-                {
-                    "id": "d18",
-                    "name": "Omenapillimehu",
-                    "price": 1.00,
-                    "volume": 0.20
-                },
-                {
-                    "id": "d19",
-                    "name": "Cola-appelsiinipillimehu",
-                    "price": 1.00,
-                    "volume": 0.20
-                }
-            ]
-        }
+  "users": [
+    {
+      "id": "1",
+      "email": "ZXNpbWVya2tpQHRlc3RpLmNvbQ==",
+      "password": "c2FsYXNhbmExMjM0",
+      "balance": 50
     },
-    "mayonnaises": [
+    {
+      "id": "28fd",
+      "email": "ZXJra2kuZXNpbWVya2tpQG1haWwuY29t",
+      "password": "c2FsYXNhbmExMjM0NTY3ODkw",
+      "balance": 1
+    }
+  ],
+  "categories": {
+    "pizzas": {
+      "common_ingredients": [
+        "Tomaattikastike",
+        "Mozzarellajuusto"
+      ],
+      "items": [
         {
-            "id": "m1",
-            "name": "Talonkastike"
+          "id": "p1",
+          "name": "Fantasia",
+          "price": 10,
+          "description": "Oma valinta pizza. Voit valita 3 ilmaista täytettä, extra täytteet maksavat 1,50 euroa per täyte",
+          "ingredients": [],
+          "possible_ingredients": [
+            "Aurajuusto",
+            "Ananas",
+            "Pepperooni",
+            "Kinkku",
+            "Kebab",
+            "Kana",
+            "Katkarapu",
+            "Tonnikala",
+            "Pekoni",
+            "Jalapeno",
+            "Jauheliha",
+            "Punasipuli",
+            "Majoneesi",
+            "Tomaatti"
+          ]
         },
         {
-            "id": "m2",
-            "name": "Valkosipuli"
+          "id": "p2",
+          "name": "Tropicana",
+          "price": 9.5,
+          "ingredients": [
+            "Kinkku",
+            "Ananas"
+          ]
         },
         {
-            "id": "m3",
-            "name": "Curry"
+          "id": "p3",
+          "name": "Americano",
+          "price": 9.5,
+          "ingredients": [
+            "Ananas",
+            "Aurajuusto",
+            "Kinkku"
+          ]
         },
         {
-            "id": "m4",
-            "name": "BBQ"
+          "id": "p4",
+          "name": "Hawaiji",
+          "price": 9.5,
+          "ingredients": [
+            "Ananas",
+            "Kana",
+            "Aurajuusto"
+          ]
+        },
+        {
+          "id": "p5",
+          "name": "Opera",
+          "price": 9.5,
+          "ingredients": [
+            "Kinkku",
+            "Pepperoni",
+            "Tonnikala"
+          ]
+        },
+        {
+          "id": "p6",
+          "name": "Kebab",
+          "price": 9.5,
+          "ingredients": [
+            "Kebab",
+            "Punasipuli",
+            "Majoneesi"
+          ]
+        },
+        {
+          "id": "p7",
+          "name": "Jauheliha",
+          "price": 9.5,
+          "ingredients": [
+            "Jauheliha",
+            "Sipuli"
+          ]
+        },
+        {
+          "id": "p8",
+          "name": "Kana",
+          "price": 9.5,
+          "ingredients": [
+            "Kana",
+            "Tomaatti"
+          ]
+        },
+        {
+          "id": "p9",
+          "name": "Tonnikala",
+          "price": 9.5,
+          "ingredients": [
+            "Tonnikala",
+            "Punasipuli",
+            "Tomaatti"
+          ]
         }
-    ],
-    "orders": [
+      ]
+    },
+    "kebabs": {
+      "common_ingredients": [
+        "Salaatti",
+        "Kurkku",
+        "Tomaatti",
+        "Majoneesi"
+      ],
+      "items": [
         {
-            "id": 1,
-            "userId": 1,
-            "items": [
-                {
-                    "id": "p1",
-                    "name": "Fantasia",
-                    "price": 10.00,
-                    "ingredients": ["Aurajuusto", "Ananas", "Kinkku"]
-                },
-                {
-                    "id": "j2",
-                    "name": "Pepsi",
-                    "price": 2.00
-                }
-            ],
-            "totalPrice": 12.00,
-            "status": "valmistellaan",
-            "orderDate": "2025.03.11T11:30:00"
+          "id": "k1",
+          "name": "Kebab ranskalaisilla",
+          "price": 9,
+          "ingredients": [
+            "Kebab",
+            "Ranskalaiset"
+          ]
+        },
+        {
+          "id": "k2",
+          "name": "Kebab lohkoperunoilla",
+          "price": 9,
+          "ingredients": [
+            "Kebab",
+            "Lohkoperunat"
+          ]
+        },
+        {
+          "id": "k3",
+          "name": "Kebab riisillä",
+          "price": 9,
+          "ingredients": [
+            "Kebab",
+            "Riisi"
+          ]
+        },
+        {
+          "id": "k4",
+          "name": "Kanabeb ranskalaisilla",
+          "price": 9,
+          "ingredients": [
+            "Kanakebab",
+            "Ranskalaiset"
+          ]
+        },
+        {
+          "id": "k5",
+          "name": "Kanakebab lohkoperunoilla",
+          "price": 9,
+          "ingredients": [
+            "Kanakebab",
+            "Lohkoperunat"
+          ]
+        },
+        {
+          "id": "k6",
+          "name": "Kanakebab riisillä",
+          "price": 9,
+          "ingredients": [
+            "Kanakebab",
+            "Riisi"
+          ]
+        },
+        {
+          "id": "k7",
+          "name": "Kasviskebab ranskalaisilla",
+          "price": 9,
+          "ingredients": [
+            "Kasviskebab",
+            "Ranskalaiset"
+          ]
+        },
+        {
+          "id": "k8",
+          "name": "Kasviskebab lohkoperunoilla",
+          "price": 9,
+          "ingredients": [
+            "Kasviskebab",
+            "Lohkoperunat"
+          ]
+        },
+        {
+          "id": "k9",
+          "name": "Kasviskebab riisillä",
+          "price": 9,
+          "ingredients": [
+            "Kasviskebab",
+            "Riisi"
+          ]
+        },
+        {
+          "id": "k10",
+          "name": "Kebabrulla",
+          "price": 8,
+          "ingredients": [
+            "Kebab",
+            "Cheddarjuusto",
+            "Punasipuli",
+            "Salaatti",
+            "Majoneesi"
+          ]
+        },
+        {
+          "id": "k11",
+          "name": "Kanakebabrulla",
+          "price": 8,
+          "ingredients": [
+            "Kanakebab",
+            "Cheddarjuusto",
+            "Punasipuli",
+            "Salaatti",
+            "Majoneesi"
+          ]
+        },
+        {
+          "id": "k12",
+          "name": "Kasviskebabrulla",
+          "price": 8,
+          "ingredients": [
+            "Kasviskebab",
+            "Cheddarjuusto",
+            "Punasipuli",
+            "Salaatti",
+            "Majoneesi"
+          ]
         }
-    ]
+      ]
+    },
+    "chickens": {
+      "common_ingredients": [
+        "Salaatti",
+        "Kurkku",
+        "Tomaatti",
+        "Majoneesi"
+      ],
+      "items": [
+        {
+          "id": "c1",
+          "name": "Kanakori",
+          "price": 9,
+          "ingredients": [
+            "Kana",
+            "Ranskalaiset"
+          ]
+        },
+        {
+          "id": "c2",
+          "name": "Kana lohkoperunoilla",
+          "price": 9,
+          "ingredients": [
+            "Kana",
+            "Lohkoperunat"
+          ]
+        },
+        {
+          "id": "c3",
+          "name": "Kana riisillä",
+          "price": 9,
+          "ingredients": [
+            "Kana",
+            "Riisi"
+          ]
+        },
+        {
+          "id": "c4",
+          "name": "Kanarulla",
+          "price": 8,
+          "ingredients": [
+            "Kana",
+            "Cheddarjuusto",
+            "Punasipuli",
+            "Salaatti",
+            "Majoneesi"
+          ]
+        }
+      ]
+    },
+    "salads": {
+      "common_ingredients": [
+        "Jäävuorisalaatti",
+        "Kurkku",
+        "Punasipuli",
+        "Tomaatti",
+        "Ananas"
+      ],
+      "items": [
+        {
+          "id": "s1",
+          "name": "Kanasalaatti",
+          "price": 7.5,
+          "ingredients": [
+            "Kana"
+          ]
+        },
+        {
+          "id": "s2",
+          "name": "Kebabsalaatti",
+          "price": 7.5,
+          "ingredients": [
+            "Kebab"
+          ]
+        },
+        {
+          "id": "s3",
+          "name": "Kanakebabsalaatit",
+          "price": 7.5,
+          "ingredients": [
+            "Kanakebab"
+          ]
+        },
+        {
+          "id": "s4",
+          "name": "Kasviskebabsalaatti",
+          "price": 7.5,
+          "ingredients": [
+            "Kasviskebab"
+          ]
+        },
+        {
+          "id": "s5",
+          "name": "Tonniakalasalaatit",
+          "price": 7.5,
+          "ingredients": [
+            "Tonnikala"
+          ]
+        }
+      ]
+    },
+    "burgers": {
+      "common_ingredients": [],
+      "buns": [
+        "Vehnäsämpylä",
+        "Perunasämpylä"
+      ],
+      "items": [
+        {
+          "id": "b1",
+          "name": "Kerroshampurilainen",
+          "price": 9,
+          "ingredients": [
+            "2x naudanjauhelihapihviä",
+            "Juusto",
+            "Punasipuli",
+            "Maustekurkku",
+            "Majoneesi"
+          ]
+        },
+        {
+          "id": "b2",
+          "name": "Juustohampurilainen",
+          "price": 6,
+          "ingredients": [
+            "Naudanjauhelihapihvi",
+            "Juusto",
+            "Ketsuppi",
+            "Salaatti",
+            "Maustekurkku"
+          ]
+        },
+        {
+          "id": "b3",
+          "name": "Kanahampurilainen",
+          "price": 8,
+          "ingredients": [
+            "Rapea kanapihvi",
+            "Salaatti",
+            "Tomaatti",
+            "Sipuli"
+          ]
+        },
+        {
+          "id": "b4",
+          "name": "Megakerroshampurilainen",
+          "price": 13,
+          "ingredients": [
+            "3x naudanjauhelihapihviä",
+            "Juusto",
+            "Punasipuli",
+            "Maustekurkku",
+            "Jalapeno",
+            "Majoneesi"
+          ]
+        },
+        {
+          "id": "b5",
+          "name": "Tuplajuustohampurilainen",
+          "price": 8.5,
+          "ingredients": [
+            "2x naudanjauhelihapihviä",
+            "Juusto",
+            "Ketsuppi",
+            "Salaatti",
+            "Maustekurkku",
+            "Punasipuli"
+          ]
+        }
+      ]
+    },
+    "drinks": {
+      "common_ingredients": [],
+      "items": [
+        {
+          "id": "d1",
+          "name": "Kuplavesi",
+          "price": 2,
+          "volume": 0.5
+        },
+        {
+          "id": "d2",
+          "name": "Pepsi",
+          "price": 2,
+          "volume": 0.33
+        },
+        {
+          "id": "d3",
+          "name": "Pepsi",
+          "price": 4,
+          "voulme": 1.5
+        },
+        {
+          "id": "d4",
+          "name": "Pepsi Max",
+          "price": 2,
+          "volume": 0.33
+        },
+        {
+          "id": "d5",
+          "name": "Pepsi Max",
+          "price": 4,
+          "volume": 1.5
+        },
+        {
+          "id": "d6",
+          "name": "Coca-Cola",
+          "price": 2,
+          "volume": 0.33
+        },
+        {
+          "id": "d7",
+          "name": "Coca-Cola",
+          "price": 4,
+          "volume": 1.5
+        },
+        {
+          "id": "d8",
+          "name": "Coca-Cola Zero",
+          "price": 2,
+          "volume": 0.33
+        },
+        {
+          "id": "d9",
+          "name": "Coca-Cola Zero",
+          "price": 4,
+          "volume": 1.5
+        },
+        {
+          "id": "d10",
+          "name": "Jaffa",
+          "price": 2.5,
+          "volume": 0.5
+        },
+        {
+          "id": "d11",
+          "name": "Jaffa sokeriton",
+          "price": 2.5,
+          "volume": 0.5
+        },
+        {
+          "id": "d12",
+          "name": "Sprite",
+          "price": 2,
+          "volume": 0.33
+        },
+        {
+          "id": "d13",
+          "name": "Sprite Zero",
+          "price": 2,
+          "volume": 0.33
+        },
+        {
+          "id": "d14",
+          "name": "7up Sokeriton",
+          "price": 2.5,
+          "volume": 0.5
+        },
+        {
+          "id": "d15",
+          "name": "Appelsiinipillimehu",
+          "price": 1,
+          "volume": 0.2
+        },
+        {
+          "id": "d16",
+          "name": "Vadelmapillimehu",
+          "price": 1,
+          "volume": 0.2
+        },
+        {
+          "id": "d17",
+          "name": "Mansikkapillimehu",
+          "price": 1,
+          "volume": 0.2
+        },
+        {
+          "id": "d18",
+          "name": "Omenapillimehu",
+          "price": 1,
+          "volume": 0.2
+        },
+        {
+          "id": "d19",
+          "name": "Cola-appelsiinipillimehu",
+          "price": 1,
+          "volume": 0.2
+        }
+      ]
+    }
+  },
+  "mayonnaises": [
+    {
+      "id": "m1",
+      "name": "Talonkastike"
+    },
+    {
+      "id": "m2",
+      "name": "Valkosipuli"
+    },
+    {
+      "id": "m3",
+      "name": "Curry"
+    },
+    {
+      "id": "m4",
+      "name": "BBQ"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 1,
+      "items": [
+        {
+          "id": "p1",
+          "name": "Fantasia",
+          "price": 10,
+          "ingredients": [
+            "Aurajuusto",
+            "Ananas",
+            "Kinkku"
+          ]
+        },
+        {
+          "id": "j2",
+          "name": "Pepsi",
+          "price": 2
+        }
+      ],
+      "totalPrice": 12,
+      "status": "valmistellaan",
+      "orderDate": "2025.03.11T11:30:00"
+    }
+  ]
 }
