@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
+import { authentication  } from '../utils/authentication';
 import '../styles/Login.css';
 
 const Login = () => {
@@ -9,30 +10,15 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
+        e.preventDefault();
         try {
-            // Salataan salasana ja sähköposti base64-salauksella
-            const encryptedEmail = btoa(email);
-            const encryptedPassword = btoa(password);
-
-            const response = await fetch("http://localhost:300/käyttäjät");
-            const users = await response.json();
-
-            const user = users.find(
-                (user) => user.email === encryptedEmail && user.password === encryptedPassword
-            );
-
-            if (user) {
-                // Tallennetaan käyttäjätiedot localStoragen avulla (yksinkertaistettu käyttäjän tunnistus)
-                localStorage.setItem("currentUser", JSON.stringify({
-                    id: user.id,
-                    email: email,
-                    balance: user.balance
-                }));
-
+            const result = await authentication.login(email, password);
+            
+            if (result.success) {
                 navigate("/main");
             } else {
-                setError("Väärä sähköposti tai salasana.");
-            }  
+                setError(result.error);
+            }
         } catch (error) {
             setError("Virhe kirjautumisessa. Yritä uudelleen.");
             console.error("Kirjautumisvirhe: ", error)

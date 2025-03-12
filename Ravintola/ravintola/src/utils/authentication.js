@@ -15,7 +15,7 @@ export const authentication = {
             const encryptedEmail = authentication.encrypt(email);
             const encryptedPassword = authentication.encrypt(password);
 
-            const response = await fetch("http://localhost:3000/user");
+            const response = await fetch("http://localhost:3000/users");
             const users = await response.json();
 
             const user = users.find(
@@ -67,7 +67,7 @@ export const authentication = {
             // Lisätään uusi käyttäjä tieotkantaan
             const response = await fetch("http://localhost:3000/users", {
                 method: "POST",
-                headers: {"Content-Type" : "application-json"},
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(newUser)
             });
 

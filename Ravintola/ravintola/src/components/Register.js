@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { authentication } from '../utils/authentication';
 import '../styles/Register.css';
 
 const Register = () => {
@@ -26,48 +27,12 @@ const Register = () => {
                 return;
             }
 
-            // Salataan salasana ja sähköposti
-            const encryptedEmail = btoa(email);
-            const encryptedPassword = btoa(password);
+            const result = await authentication.register(email, password, balanceNum);
 
-            // Tarkistetaan, onko käyttäjä jo olemassa
-            const usersResponse = await fetch("http://localhost:3000/users");
-            const users = await usersResponse.json();
-
-            const userExists = users.some(user => user.email === encryptedEmail);
-
-            if (userExists) {
-                setError("Sähköposti on jo käytössä");
-                return;
-            }
-
-            // Luodaan uusi käyttäjä-olio
-            const newUser = {
-                email: encryptedEmail,
-                password: encryptedPassword,
-                balance: balanceNum
-            };
-
-            // Lisätään käyttäjä tietokantaan
-            const response = await fetch("http://localhost:3000/users", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(newUser)
-            });
-
-            if (response.ok) {
-                const createdUser = await response.json();
-
-                // Tallennetaan käyttäjätiedot localStoragen avulla
-                localStorage.setItem("currentUser", JSON.stringify({
-                    id: createdUser.id,
-                    email: email,
-                    balance: createdUser.balance,
-                }));
-
+            if (result.success) {
                 navigate("/main");
             } else {
-                setError("Rekisteröityminen epäonnistui");
+                setError(result.error)
             }
         } catch (error) {
             setError("Tapahtui virhe rekisteröityessä. Yritä uudelleen.");

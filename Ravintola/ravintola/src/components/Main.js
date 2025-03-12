@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router';
+import { api } from '../utils/api';
+import { authentication } from '../utils/authentication';
 import '../styles/Main.css';
 
 const Main = () => {
@@ -9,13 +11,13 @@ const Main = () => {
 
     useEffect(() => {
         // Tarkistetaan, onko käyttäjä kirjautunut sisään
-        const userStr = localStorage.getItem("currentUser");
-        if (!userStr) {
+        const user = authentication.getItem("currentUser");
+        if (!user) {
             navigate("/");
             return;
         }
 
-        setCurrentUser(JSON.parse(userStr));
+        setCurrentUser(user);
 
         // Haetaan kategoriat
         fetchCategories();
@@ -23,19 +25,15 @@ const Main = () => {
 
     const fetchCategories = async () => {
         try {
-            const response = await fetch("http://localhost:3000/categories");
-            const data = await response.json();
-
-            // Eristetään kategorioiden nimet datasta
-            const categoryList = Object.keys(data).filter(c => c !== 'mayonnaises');
-            setCategories(categoryList);
+            const categories = await api.getCategories();
+            setCategories(categories);
         } catch (error) {
             console.error("Virhe kategorioita haettaessa: ", error)
         }
     };
 
     const handleLogout = () => {
-        localStorage.removeItem("currentUser");
+        authentication.logout();
         navigate("/");
     };
 
