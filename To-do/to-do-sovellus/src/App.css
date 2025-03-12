@@ -1,0 +1,130 @@
+.app {
+    background-color: white;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px black;
+}
+
+.title {
+    color: #5a36cc;
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+form input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 5px 0 0 5px;
+    transition: border-color 0.3s;
+}
+
+.todo-input:focus {
+    outline: none;
+    border-color: #7c4dff
+}
+
+.add-btn {
+    background-color: #7c4dff;
+    color: white;
+    padding: 0 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-coor 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #6a3dd3;
+}
+
+.todo-list {
+    list-style-type: none;
+}
+
+.todo-item {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-text {
+    flex: 1;
+    margin-left: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+.date-added {
+    color: #888;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.action-buttons {
+    display: flex;
+}
+
+.complete-btn, .delete-btn {
+    background: none;
+    margin-left: 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.complete-btn {
+    color: #4cad50;
+}
+
+.complete-btn:hover {
+    color: #388e3c;
+}
+
+.delete-btn {
+    color: #f44336;
+}
+
+.delete-btn:hover {
+    color: #d32f2f;
+}
+
+.status-message {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.status-success {
+    background-color: #e6f7e6;
+    color: #388e3c;
+}
+
+.status-error {
+    background-color: #fde9e9;
+    color: #d32f2f;
+}
+
+.empty-list {
+    color: #888;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}
