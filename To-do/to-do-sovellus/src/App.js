@@ -98,7 +98,7 @@ const App = () => {
         setStatus({ message, type });
         setTimeout(() => {
             setStatus({ message: "", type: "" });
-        }, 2000)
+        }, 4000)
     };
 
     const formatDate = (dateStr) => {
