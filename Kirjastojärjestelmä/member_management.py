@@ -87,7 +87,7 @@ class MemberManager:
             self.tree.delete(item)
 
         # Lisätään jäsen/jäseniä
-        members = self.db_get_all_members()
+        members = self.db.get_all_members()
         for member in members:
             self.tree.insert("", "end", values=(member['id'], member['name'], member['email'], member['phone']))
         

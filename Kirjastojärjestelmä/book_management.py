@@ -91,7 +91,7 @@ class BookManager:
         # Lisätään kirja/kirjoja
         books = self.db.get_all_books()
         for book in books:
-            available = "Yes" if book['available'] else "No"
+            available = "Kyllä" if book['available'] else "Ei"
             self.tree.insert("", "end", values=(book['id'], book['title'], book['author'], book['isbn'], available))
     
     def search_books(self):
