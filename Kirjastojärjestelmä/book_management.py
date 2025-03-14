@@ -61,7 +61,7 @@ class BookManager:
         scrollbar.grid(row=6, column=2, sticky="ns")
         self.tree.configure(yscrollcommand=scrollbar.set)
 
-        # Ladataan kirjan aluksi
+        # Ladataan kirjat aluksi
         self.load_books()
 
     def add_book(self):
