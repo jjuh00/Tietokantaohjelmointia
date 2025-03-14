@@ -47,6 +47,12 @@ class Database:
         self.conn.commit()
         return self.cursor.lastrowid
     
+    def get_all_members(self):
+        # Haetaan kaikki jäsenet tietokannasta
+        query = "SELECT * FROM members"
+        self.cursor.execute(query)
+        return self.cursor.fetchall()
+    
     def search_members(self, search_term):
         # Haetaan jäsen nimen, sähköpostin tai puhelinnumeron perusteella
         query = """
