@@ -1,1 +1,1 @@
-# Tietokantaohjelmointia
+Erinäisiä tietokantoihin liittyviä projekteja, joista osa on vielä kehitysvaiheessa. Tarkoituksena on siis harjoitella erilaisten tietokantojen yhdistämimstä sovelluksiin. Valmiita toistaiseksi ovat kirjastojärjestelmä ja to-do-sovellus.
