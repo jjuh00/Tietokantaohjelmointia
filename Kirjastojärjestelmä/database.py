@@ -92,7 +92,7 @@ class Database:
 
         # Päivitetään tapahtuma
         query = """
-        UPDATE transactions SET return_date %s WHERE book_id = %s AND return_date IS NULL"""
+        UPDATE transactions SET return_date = %s WHERE book_id = %s AND return_date IS NULL"""
         today = datetime.now().date()
         self.cursor.execute(query, (today, book_id))
         self.conn.commit()
