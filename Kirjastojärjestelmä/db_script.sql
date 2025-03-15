@@ -100,7 +100,7 @@ INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) V
 INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (17, 'Treasure Island', 'Robert Louis Stevenson', '9780195811391', 1);
 INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (18, 'Mockingjay', 'Suzanne Collions', '9780439023511', 1);
 INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (19, 'Twilight', 'Stephenie Meyer', '9780316160179', 1);
-INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (20, 'The Handmaid\'s Tale', 'Margaret Atwood', '0771008139', 1);
+INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (20, 'The Handmaids Tale', 'Margaret Atwood', '0771008139', 1);
 INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (21, 'Lyhyt historia lähes kaikesta', 'Bill Bryson', '9780309729', 1);
 INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (22, 'The God Equation', 'Michio Kaku', '9780385542746', 1);
 INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (23, 'Olemisen porteilla', 'Kari Enqvist', '9510229156', 1);
@@ -108,4 +108,3 @@ INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) V
 INSERT INTO `LibraryDB`.`books` (`id`, `title`, `author`, `isbn`, `available`) VALUES (25, 'Atomic Habits', 'James Clear', '9781847941831', 1);
 
 COMMIT;
-
