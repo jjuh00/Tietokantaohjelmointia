@@ -13,7 +13,7 @@ class MemberManager:
         # Luodaan entryt jäsenien kentille
         ttk.Label(self.frame, text="Nimi:").grid(row=0, column=0, padx=5, pady=5, sticky="w")
         self.name_var = ttk.Entry(self.frame, width=30)
-        self.name_var.grid(row=1, column=1, padx=5, pady=5)
+        self.name_var.grid(row=0, column=1, padx=5, pady=5)
 
         ttk.Label(self.frame, text="Sähköposti:").grid(row=1, column=0, padx=5, pady=5, sticky="w")
         self.email_var = ttk.Entry(self.frame, width=30)
