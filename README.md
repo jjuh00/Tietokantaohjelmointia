@@ -1,1 +1,1 @@
-Erinäisiä tietokantoihin liittyviä projekteja, joista osa on vielä kehitysvaiheessa. Tarkoituksena on siis harjoitella erilaisten tietokantojen yhdistämimstä sovelluksiin. Valmiita toistaiseksi ovat kirjastojärjestelmä ja to-do-sovellus.
+Erinäisiä tietokantoihin liittyviä projekteja, joista osa on vielä kehitysvaiheessa. Tarkoituksena on siis harjoitella erilaisten tietokantojen yhdistämistä sovelluksiin. Toistaiseksi valmiita ovat kirjastojärjestelmä ja to-do-sovellus.
