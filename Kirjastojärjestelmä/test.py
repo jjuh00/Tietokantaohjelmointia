@@ -21,7 +21,7 @@ class LibrarySystemTest(unittest.TestCase):
         self.mock_cursor = MagicMock()
 
         # Jäljitellään mysql.connector.connect metodia ylempämä luodun jäljitelmäyhteyden palauttamiseksi
-        self.patcher = patch('mysql.connector.conect')
+        self.patcher = patch("mysql.connector.connect")
         self.mock_connect = self.patcher.start()
         self.mock_connect.return_value = self.mock_conn
         self.mock_conn.cursor.return_value = self.mock_cursor
@@ -63,7 +63,7 @@ class LibrarySystemTest(unittest.TestCase):
     def test_search_books(self):
         """Testataan kirjojen hakemista"""
         # Jäljitellään fetchall-metodia testidatan palautusta varten
-        sample_book = [{'id': 1, 'title': "Python testaajan käsikirja", 'author': 'Testaaja', 'isbn': '354695464534', 'available': 1}]
+        sample_book = [{"id": 1, "title": "Python testaajan käsikirja", "author": "Testaaja", "isbn": "354695464534", "available": 1}]
         self.mock_cursor.fetchall.return_value = sample_book
 
         result = self.db.search_books("Python")
@@ -94,7 +94,7 @@ class LibrarySystemTest(unittest.TestCase):
 
     def test_borrow_book_success(self):
         """Testataan onnistunutta kirjan lainaamista"""
-        self.mock_cursor.fetchone.return_value = {'available': 1}
+        self.mock_cursor.fetchone.return_value = {"available": 1}
         result = self.db.borrow_book(1, 1)
 
         # Tarkistetaan, suorittiko funktio oikean SQL-kyselyn ja että päivittykö kirjan saatavuus
@@ -111,7 +111,7 @@ class LibrarySystemTest(unittest.TestCase):
     def test_borrow_book_unavailable(self):
         """Testataan ei saatavilla olevan kirjan lainaamista"""
         # Odotettu palautusarvo kirjan saatavuudelle (0 = ei saatavilla)
-        self.mock_cursor.fetchone.return_value = {'available': 0}
+        self.mock_cursor.fetchone.return_value = {"available": 0}
 
         result = self.db.borrow_book(1, 1)
 
@@ -132,95 +132,10 @@ class LibrarySystemTest(unittest.TestCase):
         # Tarkistetaan, päivitettiinkö palautustapahtuma
         self.assertTrue(self.mock_cursor.execute.call_count == 2)
         
-        self.mock_coon.commit.assert_called()
+        self.mock_conn.commit.assert_called()
 
         # Tarkistetaa, palautettiinko oikea arvo
         self.assertTrue(result)
-
-    def test_book_manager_initialization(self):
-        """Testatataan, että BookManagerin alustus luo tarvittavat käyttöliittymäelementit"""
-        # Luodaan jäljitelmillä BookManager-instanssi
-        with patch('tkinter.ttk.LabelFrame'), \
-             patch('tkinter.ttk.Entry'), \
-             patch('tkinter.ttk.Label'), \
-             patch('tkinter.ttk.Label'), \
-             patch('tkinter.ttk.Button'), \
-             patch('tkinter.ttk.Treeview'), \
-             patch('tkinter,ttk.Scrollbar'):
-            
-            book_manager = BookManager(self.mock_parent, self.db, self.mock_app)
-
-            # Tarkistetaan, luotiinko kehys
-            self.assertIsNotNone(book_manager.frame)
-
-            # Tarkistetaan, luotiinko puunäkymä
-            self.assertIsNotNone(book_manager.tree)
-
-    def test_member_manager_initialization(self):
-        """Testataan, että MemberManagerin alustus luo tarvittavat käyttöliittymäelementit"""
-        # Luodaan jäljitelmillä MemberManager-instanssi
-        with patch('tkinter.ttk.LabelFrame'), \
-             patch('tkinter.ttk.Entry'), \
-             patch('tkinter.ttk.Label'), \
-             patch('tkinter.ttk.Button'), \
-             patch('tkinter.ttk.Treeview'), \
-             patch('tkinter.ttk.Scrollbar'):
-            
-            member_manager = MemberManager(self.mock_parent, self.db, self.mock_app)
-
-            # Tarkistetaan, luotiinko kehys
-            self.assertIsNotNone(member_manager.frame)
-
-            # Tarkistetaan, luotiinko puunäkymä
-            self.assertIsNotNone(member_manager.tree)
-
-    def test_transaction_manager_initialization(self):
-        """Testataan, että TransactionManagerin alustus luo tarvittavat käyttöliittymäelementit"""
-        # Luodaan jäljitelmillä TransactionManager-instanssi
-        with patch('tkinter.ttk.LabelFrame'), \
-             patch('tkinter.ttk.Entry'), \
-             patch('tkinter.ttk.Label'), \
-             patch('tkinter.ttk.Button'), \
-             patch('tkinter.ttk.Treeview'), \
-             patch('tkinter.ttk.Scrollbar'):
-            
-            transaction_manager = TransactionManager(self.mock_parent, self.db, self.mock_app)
-
-            # Tarkistetaan, luotiinko kehys
-            self.assertIsNotNone(transaction_manager.frame)
-
-            # Tarkistetaan, luotiinko puunäkymä
-            self.assertIsNotNone(transaction_manager.tree)
-
-    def test_error_handling_add_book(self):
-        """Testataan virheenkäsittelyä kirjaa lisätessä"""
-        # Luodaan jäljitelmä poikkeusta varten
-        self.mock_cursor.execute.side_effect = Exception("Tietokantavirhe")
-
-        with patch('book_managemet.messagebox.showerror') as mock_showerror:
-            # BookManager-instanssi
-            with patch('tkinter.ttk.LabelFrame'), \
-                 patch('tkinter.ttk.Entry'), \
-                 patch('tkinter.ttk.Label'), \
-                 patch('tkinter.ttk.Button'), \
-                 patch('tkinter.ttk.Treeview'), \
-                 patch('tkinter.ttk.Scrollbar'):
-                
-                book_manager = BookManager(self.mock_parent, self.db, self.mock_app)
-
-                # Jäljitellään entry-kenttiä
-                book_manager.title_var = MagicMock()
-                book_manager.title_var.get.return_value = "Python testaajan käsikirja"
-                book_manager.author_var = MagicMock()
-                book_manager.author_var.get.return_value = "Testaaja"
-                book_manager.isbn_var = MagicMock()
-                book_manager.isbn_var.get.return_value = "354695464534"
-
-                # Kutsutaan funktiota, jonka pitäisi käsitellä virhe
-                book_manager.add_book()
-
-                # Tarkistetaan, käsiteltiinkö virhe (messageboxin avulla)
-                mock_showerror.assert_called_once()
 
     def test_get_active_loans(self):
         """Testataan aktiivisten lainojen hakemista"""
@@ -228,17 +143,17 @@ class LibrarySystemTest(unittest.TestCase):
         sample_date = datetime.now().date()
         sample_loan = [
             {
-                'id': 1,
-                'book_id': 1,
-                'member_id': 1,
-                'borrow_date': sample_date,
-                'due_date': sample_date + timedelta(days=30),
-                'title': 'Python testaaja käsikirja',
-                'author': 'Testaaja',
-                'isbn': '354695464534',
-                'name': 'Testaaja',
-                'email': 'testi@esimerkki.fi',
-                'phone': '0401234567'
+                "id": 1,
+                "book_id": 1,
+                "member_id": 1,
+                "borrow_date": sample_date,
+                "due_date": sample_date + timedelta(days=30),
+                "title": "Python testaajan käsikirja",
+                "author": "Testaaja",
+                "isbn": "354695464534",
+                "name": "Testaaja",
+                "email": "testi@esimerkki.fi",
+                "phone": "0401234567"
             }
         ]
         self.mock_cursor.fetchall.return_value = sample_loan
@@ -263,18 +178,179 @@ class LibrarySystemTest(unittest.TestCase):
 
         self.mock_conn.commit.assert_called_once()
 
-    def test_book_manager_add_book_ui(self):
-        """Testataan käyttöliittymän vuorovaikutusta lisäämällä kirja"""
-        with patch('book_management.messagebox.showinter') as mock_showinfo:
-            # BookManager-instanssi
-            with patch('tkinter.ttk.Label'), \
-                 patch('tkinter.ttk.Entry'), \
-                 patch("tkinter.ttk.Label"), \
-                 patch("tkinter.ttk.Button"), \
-                 patch("tkinter.ttk.Treeview"), \
-                 patch("tkinter"):
+    def test_book_manager_initialization(self):
+        """Testatataan, että BookManagerin alustus luo tarvittavat käyttöliittymäelementit"""
+        # Luodaan jäljitelmillä BookManager-instanssi
+        with patch("tkinter.ttk.LabelFrame"), \
+             patch("tkinter.ttk.Entry"), \
+             patch("tkinter.ttk.Label"), \
+             patch("tkinter.ttk.Label"), \
+             patch("tkinter.ttk.Button"), \
+             patch("tkinter.ttk.Treeview"), \
+             patch("tkinter.ttk.Scrollbar"):
             
-        
+            book_manager = BookManager(self.mock_parent, self.db, self.mock_app)
+
+            # Tarkistetaan, luotiinko kehys
+            self.assertIsNotNone(book_manager.frame)
+
+            # Tarkistetaan, luotiinko puunäkymä
+            self.assertIsNotNone(book_manager.tree)
+
+    def test_member_manager_initialization(self):
+        """Testataan, että MemberManagerin alustus luo tarvittavat käyttöliittymäelementit"""
+        # Luodaan jäljitelmillä MemberManager-instanssi
+        with patch("tkinter.ttk.LabelFrame"), \
+             patch("tkinter.ttk.Entry"), \
+             patch("tkinter.ttk.Label"), \
+             patch("tkinter.ttk.Button"), \
+             patch("tkinter.ttk.Treeview"), \
+             patch("tkinter.ttk.Scrollbar"):
+            
+            member_manager = MemberManager(self.mock_parent, self.db, self.mock_app)
+
+            # Tarkistetaan, luotiinko kehys
+            self.assertIsNotNone(member_manager.frame)
+
+            # Tarkistetaan, luotiinko puunäkymä
+            self.assertIsNotNone(member_manager.tree)
+
+    def test_transaction_manager_initialization(self):
+        """Testataan, että TransactionManagerin alustus luo tarvittavat käyttöliittymäelementit"""
+        # Luodaan jäljitelmillä TransactionManager-instanssi
+        with patch("tkinter.ttk.LabelFrame"), \
+             patch("tkinter.ttk.Entry"), \
+             patch("tkinter.ttk.Label"), \
+             patch("tkinter.ttk.Button"), \
+             patch("tkinter.ttk.Treeview"), \
+             patch("tkinter.ttk.Scrollbar"):
+            
+            transaction_manager = TransactionManager(self.mock_parent, self.db, self.mock_app)
+
+            # Tarkistetaan, luotiinko kehys
+            self.assertIsNotNone(transaction_manager.frame)
+
+            # Tarkistetaan, luotiinko puunäkymä
+            self.assertIsNotNone(transaction_manager.tree)
+
+    def test_add_book_ui(self):
+        """Testataan käyttöliittymän vuorovaikutusta kirjaa lisätessä sekä virheenkäsittelyä"""
+        # BookManager-instanssi
+        with patch("tkinter.ttk.LabelFrame"), \
+             patch("tkinter.ttk.Entry"), \
+             patch("tkinter.ttk.Label"), \
+             patch("tkinter.ttk.Button"), \
+             patch("tkinter.ttk.Treeview"), \
+             patch("tkinter.ttk.Scrollbar"), \
+             patch("book_management.messagebox.showinfo") as mock_showinfo, \
+             patch("book_management.messagebox.showerror") as mock_showerror:
+                
+            book_manager = BookManager(self.mock_parent, self.db, self.mock_app)
+
+            # Jäljitellään entryjä
+            book_manager.title_var = MagicMock()
+            book_manager.title_var.get.return_value = "Python testaajan käsikirja"
+            book_manager.author_var = MagicMock()
+            book_manager.author_var.get.return_value = "Testaaja"
+            book_manager.isbn_var = MagicMock()
+            book_manager.isbn_var.get.return_value = "354695464534"
+
+            # Kutsutaan funktiota, jonka pitäisi käsitellän kirjan lisäys
+            book_manager.add_book()
+
+            # Tarkistetaan, lisättiinkö kirja onnistuneesti (messageboxin avulla)
+            mock_showinfo.assert_called()
+
+            # Luodaan jäljitelmä poikkeusta varten
+            self.mock_cursor.execute.side_effect = Exception("Tietokantavirhe")
+
+            # Kutsutaan funktiota, jonka pitäisi käsitellä virhe
+            book_manager.add_book()
+
+            # Tarkistetaan, käsiteltiinkö virhe (messageboxin avulla)
+            mock_showerror.assert_called()
+
+    def test_add_member_ui(self):
+        """Testataan käyttöliittymän vuorovaikutusta jäsentä lisätessä sekä virheenkäsittelyä"""
+        # MemberManager-instanssi
+        with patch("tkinter.ttk.LabelFrame"), \
+             patch("tkinter.ttk.Entry"), \
+             patch("tkinter.ttk.Label"), \
+             patch("tkinter.ttk.Button"), \
+             patch("tkinter.ttk.Treeview"), \
+             patch("tkinter.ttk.Scrollbar"), \
+             patch("member_management.messagebox.showinfo") as mock_showinfo, \
+             patch("member_management.messagebox.showerror") as mock_showerror:
+            
+            member_manager = MemberManager(self.mock_parent, self.db, self.mock_app)
+
+            # Jäljitellään entryjä
+            member_manager.name_var = MagicMock()
+            member_manager.name_var.get.return_value = "Testaaja"
+            member_manager.email_var = MagicMock()
+            member_manager.email_var.get.return_value = "testi@esimerkki.fi"
+            member_manager.phone_var = MagicMock()
+            member_manager.phone_var.get.return_value = "0401234567"
+
+            # Kutsutaan funktiota, jonka pitäisi käsitellä jäsenen lisääminen
+            member_manager.add_member()
+
+            # Tarkistetaan, lisättinkö jäsen onnistuneesti (messageboxin avulla)
+            mock_showinfo.assert_called()
+
+            # Luodaan jäljitelmä poikkeusta varten
+            self.mock_cursor.execute.side_effect = Exception("Tietokantavirhe")
+
+            # Kutsutaan funktiota, jonka pitäisi käsitellä virhe
+            member_manager.add_member()
+
+            # Tarkistetaan, käsiteltiinkö virhe (messageboxin avulla)
+            mock_showerror.assert_called()
+
+    def test_borrow_and_return_book_ui(self):
+        """Testataan käyttöliittymän vuorovaikutusta kirjaa lainatessa ja palauttaessa. Testataan myös virheenkäsittelyä"""
+        # TransactionManager-instanssi
+        with patch("tkinter.ttk.LabelFrame"), \
+             patch("tkinter.ttk.Entry"), \
+             patch("tkinter.ttk.Label"), \
+             patch("tkinter.ttk.Button"), \
+             patch("tkinter.ttk.Treeview"), \
+             patch("tkinter.ttk.Scrollbar"), \
+             patch("transaction_management.messagebox.showinfo") as mock_showinfo, \
+             patch("transaction_management.messagebox.showerror") as mock_showerror:
+            
+            transaction_manager = TransactionManager(self.mock_parent, self.db, self.mock_app)
+
+            # Jäljitellään entryjä
+            transaction_manager.book_id_var = MagicMock()
+            transaction_manager.book_id_var.get.return_value = "1"
+            transaction_manager.member_id_var = MagicMock()
+            transaction_manager.member_id_var.get.return_value = "1"
+
+            self.mock_cursor.fetchone.return_value = {"available": 1}
+
+            # Kutsutaan funktiota, jonka pitäisi käsitellä kirjan lainaus
+            transaction_manager.borrow_book()
+
+            # Tarkistetaan, lainattiinko kirja onnistuneesti (messageboxin avulla)
+            mock_showinfo.assert_called()
+
+            self.mock_cursor.fetchone.return_value = {"available": 0}
+
+            # Kutsutaan funktiota, jonka pitäisi käsitellä kirjan palautus
+            transaction_manager.return_book()
+
+            # Tarkistetaan, palautettiinko kirja onnistuneesti (messageboxin avulla)
+            mock_showinfo.assert_called()
+
+            # Luodaan jäljitelmä poikkeusta varten
+            self.mock_cursor.execute.side_effect = Exception("Tietokantavirhe")
+
+            # Kutsutaan funktiota, jonka pitäisi käsitellä virhe
+            transaction_manager.return_book()
+
+            # Tarkistetaan, käsiteltiinkö virhe (messageboxin avulla)
+            mock_showerror.assert_called()
 
 if __name__ == "__main__":
     unittest.main()
