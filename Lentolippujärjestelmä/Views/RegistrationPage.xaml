@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lentolippujärjestelmä.Views.RegistrationPage"
+             Title="Rekisteröityminen">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label 
+                Text="Luo käyttäjä"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="24"
+                HorizontalOptions="Center" />
+
+            <Entry 
+                x:Name="NameEntry"
+                Placeholder="Etu- ja sukunimi"
+                ReturnType="Next" />
+
+            <Entry 
+                x:Name="EmailEntry"
+                Placeholder="esimerkki@sähköposti.fi"
+                Keyboard="Email"
+                ReturnType="Next" />
+
+            <Entry 
+                x:Name="PasswordEntry"
+                Placeholder="Salasana"
+                IsPassword="True"
+                ReturnType="Next" />
+
+            <Entry 
+                x:Name="ConfirmPasswordEntry"
+                Placeholder="Vahvista salasana"
+                IsPassword="True"
+                ReturnType="Done" />
+
+            <Label Text="Rooli:" FontAttributes="Bold" />
+            <RadioButton x:Name="NormalUserRadio" Content="Normaali käyttäjä" IsChecked="True" GroupName="UserRole" />
+            <RadioButton x:Name="AdminUserRadio" Content="Ylläpitäjä" GroupName="UserRole" />
+
+            <Button 
+                x:Name="RegisterBtn"
+                Text="Rekisteröidy" 
+                HorizontalOptions="Fill"
+                Clicked="OnRegisterBtnClicked" />
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Onko sinulla jo käyttäjä? "/>
+                <Label
+                    x:Name="LoginLabel"
+                    Text="Kirjaudu sisään tästä"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

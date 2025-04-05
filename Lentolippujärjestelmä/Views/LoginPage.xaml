@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lentolippujärjestelmä.Views.LoginPage"
+             Title="Kirjautuminen">
+    <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center">
+
+        <Label 
+            Text="Lentojen varausjärjestelmä"   
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="24"
+            HorizontalOptions="Center" />
+
+        <Entry 
+            x:Name="EmailEntry"
+            Placeholder="esimerkki@sähköposti.fi"
+            Keyboard="Email"
+            ReturnType="Next" />
+
+        <Entry 
+            x:Name="PasswordEntry"
+            Placeholder="Salasana"
+            IsPassword="True"
+            ReturnType="Done" />
+
+        <Button 
+            x:Name="LoginBtn"
+            Text="Kirjaudu sisään"
+            HorizontalOptions="Fill"
+            Clicked="OnLoginBtnClicked" />
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="Eikö sinulla ole käyttäjää ? "/>
+            <Label 
+                x:Name="RegisterLabel"
+                Text="Rekisteröidy tästä"
+                TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRegisterLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

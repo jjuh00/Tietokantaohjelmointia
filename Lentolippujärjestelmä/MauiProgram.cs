@@ -1,24 +1,33 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Lentolippujärjestelmä;
-
-public static class MauiProgram
+namespace Lentolippujärjestelmä
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                });
+
+            // Rekisteröidään sivut
+            builder.Services.AddTransient<Views.LoginPage>();
+            builder.Services.AddTransient<Views.RegistrationPage>();
+            builder.Services.AddTransient<Views.UserPage>();
+            builder.Services.AddTransient<Views.AdminPage>();
+
 
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
-	}
+            return builder.Build();
+        }
+    }
+
 }

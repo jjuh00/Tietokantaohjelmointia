@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lentolippujärjestelmä.Views.AdminPage"
+             Title="Lentolippujärjestelmä - Admin">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="20">
+
+            <Label 
+                x:Name="WelcomeLabel"
+                Text="Tervetuloa!"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0" />
+
+            <Border
+                Stroke="LightGray"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Padding="15"
+                Margin="0,10,0,0">
+                <VerticalStackLayout Spacing="15">
+                    <Label 
+                        Text="Hallitse lentoja"
+                        FontSize="20"
+                        FontAttributes="Bold" />
+
+                    <Button 
+                        Text="Näytä kaikki lennot"
+                        Clicked="OnViewAllFlightsClicked"
+                        HorizontalOptions="Center" />
+
+                    <Button 
+                        Text="Lisää uusi lento" 
+                        Clicked="OnAddNewFlightClicked" 
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button
+                Text="Kirjaudu ulos"
+                Clicked="OnLogoutClicked"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
