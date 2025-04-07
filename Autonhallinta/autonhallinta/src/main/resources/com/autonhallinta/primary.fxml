@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autonhallinta.PrimaryController">
-   <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autonhallinta.PrimaryController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Autojenhallintajärjestelmä" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Hae:" />
+        <TextField fx:id="searchManufacturer" promptText="Valmistaja" prefWidth="120" />
+        <TextField fx:id="searchModel" promptText="Malli" prefWidth="120" />
+        <ComboBox fx:id="searchEngineType" promptText="Käyttövoima" prefWidth="150" />
+        <Label text="Vuosimalli:" />
+        <TextField fx:id="searchYearFrom" promptText="Minimi" prefWidth="60" />
+        <TextField fx:id="searchYearTo" promptText="Maksimi" prefWidth="60" />
+        <Label text="Teho (HV):"/>
+        <TextField fx:id="searchMinPower" promptText="Minimi" prefWidth="60" />
+        <TextField fx:id="searchMaxPower" promptText="Maksimi" prefWidth="60" />
+        <Button text="Hae" onAction="#handleSearch" />
+        <Button text="Nollaa haku" onAction="#handleResetSearch" />
+    </HBox>
+
+    <TableView fx:id="carTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="manufacturerColumn" text="Valmistaja" prefWidth="120" />
+            <TableColumn fx:id="modelColumn" text="Malli" prefWidth="120" />
+            <TableColumn fx:id="yearColumn" text="Vuosimalli" prefWidth="70" />
+            <TableColumn fx:id="distanceColumn" text="Mittarilukema (km)" prefWidth="100" />
+            <TableColumn fx:id="engineColumn" text="Käyttövoima" prefWidth="150" />
+            <TableColumn fx:id="powerColumn" text="Teho (HV)" prefWidth="80" />
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Lisää uusi auto" onAction="#handleAddCar" />
+        <Button text="Muokkaa" onAction="#handleEditCar" />
+        <Button text="Poista" onAction="#handleDeleteCar" />
+    </HBox>
 </VBox>
