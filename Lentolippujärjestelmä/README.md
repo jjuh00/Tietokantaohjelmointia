@@ -3,9 +3,9 @@ Yksinkertainen lentolippujärjestelmä, jossa normaalina käyttäjänä voi hake
 Automatisoidut testit eivät ole valmiita (eivätkä ole vielä repossa).
 
 Hakemistorakenne:
-Models-kansio sisältää ohjelman datarakenteen, kuten käyttäjät, lennot ja varaukset.
-Services-kansio sisältää tietokannan- ja salasananhallinnan
-Views-kansio sisältää käyttöliitymäsivut ja koodit niiden taustalla.
+Models-kansio sisältää ohjelman datarakenteen, kuten käyttäjät, lennot ja varaukset.<br />
+Services-kansio sisältää tietokannan- ja salasananhallinnan.<br />
+Views-kansio sisältää käyttöliitymäsivut ja koodit niiden taustalla.<br />
 
 Vaatii toimiakseen PostgreSQL:n ja .NET Maui:n. Tietokannan tiedot löytyvät Services/DatabaseService.cs -koodista (_connectionString). db.sql -tiedoton avulla voi luoda tarvittavat taulut.
 
