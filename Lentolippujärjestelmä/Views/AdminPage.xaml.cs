@@ -1,33 +1,59 @@
 using Lentolippujärjestelmä.Models;
-using System;
-using Microsoft.Maui.Controls;
+using Lentolippujärjestelmä.Services;
 
 namespace Lentolippujärjestelmä.Views
 {
+    [QueryProperty(nameof(CurrentUser), "User")]
     public partial class AdminPage : ContentPage
     {
-        private readonly User _currentUser;
-        public AdminPage(User user)
+        private User _currentUser;
+        private readonly DatabaseService db;
+
+        public User CurrentUser
+        {
+            get => _currentUser;
+            set
+            {
+                _currentUser = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public AdminPage(DatabaseService databaseService)
         {
             InitializeComponent();
-            _currentUser = user;
-            WelcomeLabel.Text = $"Tervetuloa, {_currentUser.Name}!";
+            db = databaseService;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_currentUser == null)
+            {
+                Shell.Current.DisplayAlert("Virhe", "Käyttäjän tietoja ei löytynyt", "OK");
+                Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            }
+            else
+            {
+                WelcomeLabel.Text = $"Tervetuloa, {_currentUser.Name}!";
+            }
         }
 
         private async void OnViewAllFlightsClicked(object sender, EventArgs e)
         {
-            // Normaalisti haettaisiin ja näytettäisiin kaikki lennot
-            // Normaalisti navigoitaisiin lennot-sivulle
+            await Shell.Current.GoToAsync(nameof(FlightListPage), new Dictionary<string, object> { { "User", _currentUser } });
         }
 
         private async void OnAddNewFlightClicked(object sender, EventArgs e)
         {
-            // Normaalisti navigoitaisiin lomake-sivulle uuden lennon lisäämistä varten
+            FlightSession.EditingFlight = null;
+            await Shell.Current.GoToAsync(nameof(AddFlightPage));
         }
 
-        private void OnLogoutClicked(object sender, EventArgs e)
+        private async void OnLogoutClicked(object sender, EventArgs e)
         {
-            Application.Current?.Quit();
+            await Shell.Current.Navigation.PopToRootAsync();
+            await Shell.Current.GoToAsync(nameof(LoginPage));
         }
     }
 }

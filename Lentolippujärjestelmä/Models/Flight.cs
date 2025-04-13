@@ -6,11 +6,12 @@
         public string FlightNumber { get; set; } = string.Empty;
         public string DepartureAirport {  get; set; } = string.Empty;
         public string DestinationAirport {  get; set; } = string.Empty;
-        public DateTime DeparuteTime { get; set; }
+        public DateTime DepartureTime { get; set; }
         public double Duration { get; set; } // Tunteina
         public decimal Price { get; set; }
         public int Capacity { get; set; }
         public int AvailableSeats { get; set; }
+        public bool IsExistingFlight { get; set; }
 
         public string Route => $"{DepartureAirport} → {DestinationAirport}";
     }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lentolippujärjestelmä.Views.AddFlightPage"
+             Title="Lennon lisäys">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Label 
+                Text="Lisää uusi lento"
+                FontSize="24"
+                HorizontalOptions="Center" />
+
+            <Entry
+                x:Name="FlightNumberEntry"
+                Placeholder="Lennon numero"
+                Text="{Binding Flight.FlightNumber, Mode=TwoWay}"
+                ReturnType="Next" />
+
+            <Entry 
+                x:Name="DepartureAirportEntry"
+                Placeholder="Lähtöasema"
+                Text="{Binding Flight.DepartureAirport, Mode=TwoWay}"
+                ReturnType="Next" />
+
+            <Entry 
+                x:Name="DestinationAirportEntry"
+                Placeholder="Määräasema"
+                Text="{Binding Flight.DestinationAirport, Mode=TwoWay}"
+                ReturnType="Next" />
+
+            <Label Text="Lähtöaika:" />
+            <DatePicker x:Name="DepartureDatePicker" />
+            <TimePicker x:Name="DepartureTimePicker" />
+
+            <Label Text="Kesto: "/>
+            <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="10">
+                <Picker 
+                    x:Name="HoursPicker"
+                    Grid.Column="0"
+                    Title="Tunnit"
+                    ItemsSource="{Binding HourOptions}"
+                    WidthRequest="100" />
+                <Picker 
+                    x:Name="MinutesPicker"
+                    Grid.Column="1"
+                    Title="Minuutit"
+                    ItemsSource="{Binding MinuteOptions}"
+                    WidthRequest="100" />
+            </Grid>
+
+            <Entry 
+                x:Name="PriceEntry"
+                Placeholder="Hinta"
+                Keyboard="Numeric"
+                Text="{Binding Flight.Price, Mode=TwoWay}"
+                ReturnType="Next" />
+
+            <Entry 
+                x:Name="CapacityEntry"
+                Placeholder="Istumapaikat"
+                Keyboard="Numeric"
+                Text="{Binding Flight.Capacity, Mode=TwoWay}"
+                ReturnType="Done" />
+
+            <Button
+                x:Name="AddFlightBtn"
+                Text="Lisää lento"
+                Clicked="OnAddFlightClicked"
+                HorizontalOptions="Fill" />
+
+            <Button 
+                x:Name="EditFlightBtn"
+                Text="Päivitä lento"
+                Clicked="OnUpdateFlightClicked"
+                IsVisible="False"
+                HorizontalOptions="Fill" />
+
+            <Button 
+                x:Name="DeleteFlightBtn"
+                Text="Poista lento"
+                Clicked="OnDeleteFlightClicked"
+                HorizontalOptions="Fill"
+                IsVisible="False" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

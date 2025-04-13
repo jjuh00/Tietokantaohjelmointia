@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lentolippujärjestelmä.Views.FlightListPage"
+             Title="Lennot">
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Label 
+            Text="Saatavilla olevat lennot"
+            FontSize="24"
+            HorizontalOptions="Center"/>
+
+        <ListView x:Name="FlightsListView" ItemSelected="OnFlightSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto, Auto">
+                            <Label Text="{Binding Route}" FontAttributes="Bold" Grid.ColumnSpan="2" />
+                            <Label Text="{Binding DepartureTime, StringFormat='{0:dd.MM.yyyy HH:mm}'}" Grid.Row="1" />
+                            <Label Text="{Binding Price, StringFormat='{0:C}'}" Grid.Row="1" Grid.Column="1" />
+                            <Label Text="{Binding AvailableSeats, StringFormat='Paikkoja jäljellä: {0}'}" Grid.Row="2" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

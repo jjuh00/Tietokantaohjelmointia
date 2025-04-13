@@ -43,19 +43,18 @@
             <RadioButton x:Name="AdminUserRadio" Content="Ylläpitäjä" GroupName="UserRole" />
 
             <Button 
-                x:Name="RegisterBtn"
                 Text="Rekisteröidy" 
                 HorizontalOptions="Fill"
                 Clicked="OnRegisterBtnClicked" />
 
-            <HorizontalStackLayout HorizontalOptions="Center">
-                <Label Text="Onko sinulla jo käyttäjä? "/>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Onko sinulla jo käyttäjä?"/>
                 <Label
                     x:Name="LoginLabel"
                     Text="Kirjaudu sisään tästä"
                     TextDecorations="Underline">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLoginTapped" />
+                        <TapGestureRecognizer Tapped="OnLoginLabelTapped" />
                     </Label.GestureRecognizers>
                 </Label>
             </HorizontalStackLayout>

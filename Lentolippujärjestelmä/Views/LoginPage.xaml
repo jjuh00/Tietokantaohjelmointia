@@ -27,13 +27,12 @@
             ReturnType="Done" />
 
         <Button 
-            x:Name="LoginBtn"
             Text="Kirjaudu sisään"
             HorizontalOptions="Fill"
             Clicked="OnLoginBtnClicked" />
 
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Label Text="Eikö sinulla ole käyttäjää ? "/>
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+            <Label Text="Eikö sinulla ole käyttäjää?" />
             <Label 
                 x:Name="RegisterLabel"
                 Text="Rekisteröidy tästä"

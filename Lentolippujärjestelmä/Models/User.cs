@@ -6,6 +6,6 @@
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty; // Tallennetaan vain salattu salasana
-        public bool IsAdmin { get; set; } = false;
+        public int Role { get; set; } = 1; // 0 = admin, 1 = normaali käyttäjä
     }
 }
