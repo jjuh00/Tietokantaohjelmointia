@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "67f150b74610c7c9700e4836"
+  },
+  "manufacturer": "Mercedes-Benz",
+  "model": "350e A AMG",
+  "distance_travelled": 125000,
+  "manufacturing_year": 2015,
+  "engine": "Hybridi (Bensiini/Sähkö)",
+  "power": 400
+},
+{
+  "_id": {
+    "$oid": "67f150b74610c7c9700e4837"
+  },
+  "manufacturer": "Volvo",
+  "model": "EX40",
+  "distance_travelled": 46200,
+  "manufacturing_year": 2019,
+  "engine": "Sähkö",
+  "power": 333
+},
+{
+  "_id": {
+    "$oid": "67f150b74610c7c9700e4838"
+  },
+  "manufacturer": "Ford",
+  "model": "C-Max",
+  "manufacturing_year": 2012,
+  "engine": "Bensiini",
+  "power": 160,
+  "distance_travelled": 182000
+},
+{
+  "_id": {
+    "$oid": "67f3c50426f36dfe995e6738"
+  },
+  "manufacturer": "Nissan",
+  "model": "Almera",
+  "distance_travelled": 250000,
+  "manufacturing_year": 2004,
+  "engine": "Bensiini",
+  "power": 100
+}]
