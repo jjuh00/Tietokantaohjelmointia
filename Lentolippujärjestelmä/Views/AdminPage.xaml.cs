@@ -33,6 +33,7 @@ namespace Lentolippujärjestelmä.Views
                 Shell.Current.DisplayAlert("Virhe", "Käyttäjän tietoja ei löytynyt", "OK");
                 Shell.Current.Navigation.PopToRootAsync();
                 Shell.Current.GoToAsync(nameof(LoginPage));
+                return;
             }
             else
             {
