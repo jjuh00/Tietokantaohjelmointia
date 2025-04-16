@@ -1,5 +1,7 @@
 Yksinkertainen lentolippujärjestelmä, jossa normaalina käyttäjänä voi hakea lentoja ja varata itselleen lentolipun. Admin-käyttäjä voi lisätä, muokata tai poistaa lentoja.
 
+Automatisoidut testit eivät ole vielä valmiita (eikä siten repossa).
+
 Hakemistorakenne:<br />
 Models-kansio sisältää ohjelman datarakenteen, kuten käyttäjät, lennot ja varaukset.<br />
 Services-kansio sisältää tietokannan- ja salasananhallinnan.<br />
