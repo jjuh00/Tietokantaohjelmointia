@@ -39,6 +39,7 @@ namespace Lentolippujärjestelmä.Views
             {
                 // Muokataan olemassaolevaa lentoa
                 _flight.IsExistingFlight = true;
+                this.Title = "Lennon muokkaus";
                 PopulateForm();
                 ConfigureButtonsForEdit();
             }
