@@ -25,22 +25,22 @@ namespace Lentolippujärjestelmä.Views
             db = databaseService;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
             if (_currentUser == null)
             {
-                DisplayAlert("Virhe", "Käyttäjän tietoja ei saatu", "OK");
-                Shell.Current.Navigation.PopToRootAsync();
-                Shell.Current.GoToAsync(nameof(LoginPage));
+                await DisplayAlert("Virhe", "Käyttäjän tietoja ei saatu", "OK");
+                await Shell.Current.Navigation.PopToRootAsync();
+                await Shell.Current.GoToAsync(nameof(LoginPage));
                 return;
             }
-            LoadReservations();
+            await LoadReservations();
         }
 
         // Ladataan ja näytetään käyttäjän varaukset
-        private async void LoadReservations()
+        private async Task LoadReservations()
         {
             try
             {

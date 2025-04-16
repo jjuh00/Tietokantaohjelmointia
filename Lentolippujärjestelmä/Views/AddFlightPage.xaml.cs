@@ -25,6 +25,8 @@ namespace Lentolippujärjestelmä.Views
             db = databaseService;
             _flight = flight ?? new Flight();
 
+            DepartureDatePicker.MinimumDate = DateTime.Today;
+
             HoursPicker.ItemsSource = HourOptions;
             MinutesPicker.ItemsSource = MinuteOptions;
 
