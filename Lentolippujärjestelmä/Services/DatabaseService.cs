@@ -328,6 +328,7 @@ namespace Lentolippujärjestelmä.Services
             }
         }
 
+        // Haetaan lennon varaukset
         public async Task<int> GetReservationsForFlightAsync(string flightId)
         {
             try
