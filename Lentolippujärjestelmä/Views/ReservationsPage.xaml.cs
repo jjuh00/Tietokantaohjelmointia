@@ -34,7 +34,6 @@ namespace Lentolippujärjestelmä.Views
                 await DisplayAlert("Virhe", "Käyttäjän tietoja ei saatu", "OK");
                 await Shell.Current.Navigation.PopToRootAsync();
                 await Shell.Current.GoToAsync(nameof(LoginPage));
-                return;
             }
             await LoadReservations();
         }
