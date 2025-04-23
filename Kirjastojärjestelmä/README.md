@@ -2,6 +2,6 @@ Python-ohjelma, jossa käyttäjät voivat hallita (kuviteellisen) kirjaston kirj
 
 Ohjelma vaatii toimiakseen MySQL:än, sillä ohjelma hyödyntää MySQL-tietokantaa. Tietokannan voi luoda itselleen repossa olevan SQL-luontiskriptin avulla.
 
-Ohjelman ajetaan komennolla python main.py. Testit ajetaan komennolla python test.py
+Ohjelma ajetaan komennolla python main.py. Testit ajetaan komennolla python test.py
 
 Testien tekemisessä on hyödynnetty tekoälyä.
