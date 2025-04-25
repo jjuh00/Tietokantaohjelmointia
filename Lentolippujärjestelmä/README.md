@@ -7,6 +7,6 @@ Views-kansio sisältää käyttöliitymäsivut ja koodit niiden taustalla.<br />
 
 Vaatii toimiakseen PostgreSQL:n ja .NET Maui:n. Tietokannan tiedot löytyvät Services/DatabaseService.cs -koodista (_connectionString). db.sql -tiedoston avulla voi luoda tarvittavat taulut.
 
-Ohjelman ajaminen: Siirry ensiksi hakemistoon, jossa Lentolippujärjestelmä.csproj sijaitsee (./Lentolippujärjestelmä). Tässä hakemistossa anna komento "dotnet build" ja sitten "dotnet run --framewrok net9.0-windows10.0.19041.0".
+Ohjelman ajaminen: Siirry ensiksi hakemistoon, jossa Lentolippujärjestelmä.csproj sijaitsee (./Lentolippujärjestelmä). Tässä hakemistossa anna komento "dotnet build" ja sitten "dotnet run --framework net9.0-windows10.0.19041.0".
 
 Ohjelman tekemisessä on hyödynnetty tekoälyä.
